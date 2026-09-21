@@ -18,7 +18,7 @@ public_html/assets/script.js
 public_html/assets/fonts/
 ```
 
-Kontaktskjemaet åpner brukerens e-postklient og sender til `hei@abcbygg.no`. Bytt e-postadresse og telefonnummer i `index.html` før publisering, og koble eventuelt skjemaet til en formtjeneste senere.
+Kontaktskjemaet bruker FormSubmit.co og sender forespørsler til `renats.bogdanovs@gmail.com`. Før første bruk må mottakeren bekrefte e-postadressen via FormSubmit. Oppdater mottakeradressen og `_next`-adressen i `index.html` dersom de endres.
 
 ## GitHub
 
