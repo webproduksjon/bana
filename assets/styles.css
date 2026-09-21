@@ -243,3 +243,44 @@ body{background:var(--paper);color:var(--ink)}
   .gallery-grid figure:nth-child(28),
   .gallery-grid figure:nth-child(31){margin-bottom:22px}
 }
+
+/* Mobile gallery: stable grid with full-width landscape project photos. */
+@media (max-width:850px){
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    column-gap:13px;
+    row-gap:25px;
+    grid-auto-flow:row;
+    align-items:start;
+  }
+  .gallery-grid figure,
+  .gallery-grid figure:nth-child(3n+1),
+  .gallery-grid figure:nth-child(4n+1),
+  .gallery-grid figure:nth-child(5n+1),
+  .gallery-grid figure:nth-child(7),
+  .gallery-grid figure:nth-child(18),
+  .gallery-grid figure:nth-child(28),
+  .gallery-grid figure:nth-child(31){
+    display:block;
+    width:auto;
+    grid-column:auto;
+    margin:0;
+    break-inside:auto;
+  }
+  .gallery-grid figure.gallery-landscape{
+    grid-column:1 / -1!important;
+  }
+  .gallery-grid img,
+  .gallery-grid figure:nth-child(3n+1) img,
+  .gallery-grid figure:nth-child(4n+1) img,
+  .gallery-grid figure:nth-child(5n+1) img{
+    width:100%;
+    height:auto!important;
+    aspect-ratio:auto;
+    object-fit:contain;
+  }
+}
+@media (max-width:390px){
+  .gallery-grid{column-gap:12px;row-gap:22px}
+}
