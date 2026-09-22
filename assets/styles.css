@@ -1616,10 +1616,11 @@ body {
   }
 }
 
-/* Speed Index optimization: keep below-the-fold rendering deferred without changing layout. */
+/* Speed Index optimization: defer stable below-the-fold sections. The gallery is
+   intentionally excluded because its many lazy-loaded images can change its
+   height while an anchor link is scrolling to the contact section below it. */
 .services,
 .trust,
-.gallery,
 .contact,
 .site-footer {
   content-visibility: auto;
