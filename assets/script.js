@@ -46,6 +46,14 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
       menuToggle?.setAttribute("aria-expanded", "false");
     }
     history.replaceState(null, "", selector);
-    target.scrollIntoView({ behavior: "auto", block: "start" });
+    // Let the mobile menu and any pending style recalculation settle before
+    // measuring the destination. Re-apply the same position on the next frame
+    // so a late image decode cannot leave the form halfway up the page.
+    requestAnimationFrame(() => {
+      window.scrollTo(0, target.getBoundingClientRect().top + window.scrollY);
+      requestAnimationFrame(() => {
+        window.scrollTo(0, target.getBoundingClientRect().top + window.scrollY);
+      });
+    });
   });
 });
