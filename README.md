@@ -6,34 +6,35 @@ Dette er en ren statisk nettside laget med vanlig HTML, CSS og JavaScript. Den h
 
 Åpne `index.html` direkte i nettleseren, eller last opp hele mappen til et webhotell. Nettstedet er laget for vanlig statisk hosting.
 
-## Publisering til GitHub Pages
+## Publisering til Domene.no
 
-Legg filene i repositoryets rot og aktiver GitHub Pages fra branch `main` og mappen `/ (root)`. Nettstedet publiseres på `https://webproduksjon.github.io/bana/`.
+Last opp innholdet i denne pakken direkte til hostingens dokumentrot, vanligvis `public_html`. `index.html` må ligge direkte i dokumentroten. Ikke last opp selve repository-mappen som et ekstra nivå.
 
 Mappestrukturen skal være:
 
 ```text
-index.html
-robots.txt
-sitemap.xml
-assets/styles.css
-assets/script.js
-assets/fonts/
-assets/gallery/
+public_html/index.html
+public_html/.htaccess
+public_html/robots.txt
+public_html/sitemap.xml
+public_html/assets/styles.css
+public_html/assets/script.js
+public_html/assets/fonts/
+public_html/assets/gallery/
 ```
 
 Alle interne lenker og alle bilder, fonter, CSS- og JavaScript-filer bruker relative stier. De fungerer derfor fra domenets dokumentrot uten Node.js, React, Vite eller en build-prosess.
 
-Kontaktskjemaet bruker FormSubmit.co og sender forespørsler til `renats.bogdanovs@gmail.com`. Før første bruk må mottakeren bekrefte e-postadressen via FormSubmit. Skjemaet returnerer nå til `https://webproduksjon.github.io/bana/?sent=1#kontakt` etter innsending.
+Kontaktskjemaet bruker FormSubmit.co og sender forespørsler til `renats.bogdanovs@gmail.com`. Før første bruk må mottakeren bekrefte e-postadressen via FormSubmit. Skjemaet returnerer til samme nettsted etter innsending.
 
-GitHub Pages leverer nettstedet over HTTPS. Filen `.nojekyll` sørger for at GitHub Pages behandler nettstedet som en ren statisk eksport.
+`.htaccess` inkluderer HTTPS-redirect og grunnleggende sikkerhetsheadere for Apache/LiteSpeed-hosting. Hvis Domene.no har en egen «Force HTTPS»-innstilling, kan den også aktiveres i kontrollpanelet.
 
-## GitHub
+## Filer og lenker
 
-Repositoryet publiseres som et prosjektnettsted på `https://webproduksjon.github.io/bana/`. Alle interne lenker, bilder, fonter, CSS- og JavaScript-filer bruker relative stier og fungerer derfor under `/bana/`.
+Alle interne lenker, bilder, fonter, CSS- og JavaScript-filer bruker relative stier. Nettstedet kan derfor lastes opp direkte til en hvilken som helst domenemappe uten at domenet er bygget inn i filene.
 
 ## Før lansering
 
-Kontroller at `index.html` ligger direkte i repositoryets rot, åpne `https://webproduksjon.github.io/bana/`, test menyen på mobil, test alle seksjonslenkene og send én testmelding gjennom kontaktskjemaet. Kontroller også at `https://webproduksjon.github.io/bana/robots.txt` og `https://webproduksjon.github.io/bana/sitemap.xml` åpner uten 404-feil.
+Kontroller at `index.html` ligger direkte i `public_html`, åpne nettstedet over HTTPS, test menyen på mobil, test alle seksjonslenkene og send én testmelding gjennom kontaktskjemaet. Kontroller også at `/robots.txt` og `/sitemap.xml` åpner uten 404-feil.
 
 Bytt ut eventuell eksempeltekst og kontaktinformasjon, og kontroller at bildene er dine eller lisensiert for bruk.

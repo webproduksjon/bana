@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://webproduksjon.github.io/bana/sitemap.xml
+Sitemap: /sitemap.xml
