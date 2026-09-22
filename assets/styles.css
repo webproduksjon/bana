@@ -1616,16 +1616,8 @@ body {
   }
 }
 
-/* Speed Index optimization: defer stable below-the-fold sections. The gallery is
-   intentionally excluded because its many lazy-loaded images can change its
-   height while an anchor link is scrolling to the contact section below it. */
-.services,
-.trust,
-.contact,
-.site-footer {
-  content-visibility: auto;
-  contain-intrinsic-size: 800px;
-}
+/* Keep section geometry fully laid out so anchor navigation always uses the
+   final document position, including on the first visit. */
 
 /* Targeted photo-position correction only: keep hero copy on green. */
 @media (max-width: 850px) {

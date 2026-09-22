@@ -31,3 +31,21 @@ if (menuToggle && mainNav) {
     });
   });
 }
+
+// Use an immediate, explicit anchor jump. Smooth scrolling can race with
+// lazy-loaded gallery images and move the contact target while the animation
+// is still running, which can leave the first Kontakt click in the gallery.
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const selector = link.getAttribute("href");
+    const target = selector ? document.querySelector(selector) : null;
+    if (!target) return;
+    event.preventDefault();
+    if (mainNav && mainNav.classList.contains("open")) {
+      mainNav.classList.remove("open");
+      menuToggle?.setAttribute("aria-expanded", "false");
+    }
+    history.replaceState(null, "", selector);
+    target.scrollIntoView({ behavior: "auto", block: "start" });
+  });
+});
