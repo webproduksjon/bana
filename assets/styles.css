@@ -1757,3 +1757,28 @@ body {
     background: var(--cream);
   }
 }
+
+/* New before/after projects: preserve the complete composite image. */
+.gallery-grid figure.gallery-new-portrait {
+  grid-column: span 1 !important;
+}
+
+.gallery-grid figure.gallery-new-landscape {
+  grid-column: span 2 !important;
+}
+
+.gallery-grid figure.gallery-new img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  object-fit: contain;
+  background: var(--cream);
+}
+
+@media (max-width: 850px) {
+  .gallery-grid figure.gallery-new {
+    grid-column: 1 / -1 !important;
+    width: 100%;
+    margin: 0;
+  }
+}
