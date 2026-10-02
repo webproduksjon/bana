@@ -549,6 +549,28 @@ code {
   align-items: center;
   gap: 8px;
 }
+.footer-credit {
+  width: min(100% - 36px, 1240px);
+  margin: 25px auto 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(183, 200, 191, 0.2);
+  color: #8fa59a;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+.footer-credit a {
+  color: #c3d2ca;
+  text-decoration: underline;
+  text-decoration-color: rgba(195, 210, 202, 0.45);
+  text-underline-offset: 3px;
+  transition: color 0.18s, text-decoration-color 0.18s;
+}
+.footer-credit a:hover,
+.footer-credit a:focus-visible {
+  color: #fff;
+  text-decoration-color: currentColor;
+}
 @media (max-width: 850px) {
   .wrap {
     width: min(100% - 36px, 650px);
